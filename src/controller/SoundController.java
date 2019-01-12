@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.File;
 import javafx.concurrent.Task;
 import javafx.scene.media.AudioClip;
 import model.Car;
@@ -23,9 +22,7 @@ public class SoundController extends Task<Void> {
         AudioClip engineNoise = null;
         try {
             // "Professionally" recorded engine noise of my motorcycle
-            engineNoise = new AudioClip(new File("res/engine.wav").toURI().toString());
-            // Unfortunately sounds dont work when the application is run as a
-            // .jar
+            engineNoise = new AudioClip(getClass().getResource("/engine.wav").toString());
         } catch (Exception e) {
             e.printStackTrace();
             throw e;

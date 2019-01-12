@@ -2,7 +2,6 @@ package model;
 
 import static java.lang.Math.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -362,7 +361,7 @@ public strictfp class Car implements Drawable, Freezeable {
     public static void initTrack() {
         BufferedImage mask = null;
         try {
-            mask = ImageIO.read(new File("res/track_mask.png"));
+            mask = ImageIO.read(Car.class.getResourceAsStream("/track_mask.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
